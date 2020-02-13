@@ -40,4 +40,6 @@ cp $MINGW64_BIN/libpcre-1.dll $BUILD_DIR/shadowsocks-libev/bin/
 cp $MINGW64_BIN/libsodium-23.dll $BUILD_DIR/shadowsocks-libev/bin/
 cp $MINGW64_BIN/libgcc_s_seh-1.dll $BUILD_DIR/shadowsocks-libev/bin/
 
-tar czf shadowsocks-libev-windows.tar.gz $BUILD_DIR/shadowsocks-libev/bin -C $BUILD_DIR/shadowsocks-libev .
+cd $BUILD_DIR/shadowsocks-libev
+tar czf shadowsocks-libev-windows.tar.gz ./bin
+mv shadowsocks-libev-windows.tar.gz ../../

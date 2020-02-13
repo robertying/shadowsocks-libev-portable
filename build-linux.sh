@@ -62,4 +62,6 @@ cd ..
 
 cd ..
 
-tar czf shadowsocks-libev-linux.tar.gz $BUILD_DIR/shadowsocks-libev/bin -C $BUILD_DIR/shadowsocks-libev .
+cd $BUILD_DIR/shadowsocks-libev
+tar czf shadowsocks-libev-linux.tar.gz ./bin
+mv shadowsocks-libev-linux.tar.gz ../../
