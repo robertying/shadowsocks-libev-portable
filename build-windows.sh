@@ -5,11 +5,12 @@ BUILD_DIR=$DIR/build
 mkdir -p $BUILD_DIR
 cd $BUILD_DIR
 
-GCC_PATH=$(which gcc)
-MINGW64_BIN=${GCC_PATH::-4}
 CPU=2
 
 pacman -S --noconfirm base-devel mingw-w64-x86_64-toolchain mingw-w64-x86_64-libsodium mingw-w64-x86_64-mbedtls mingw-w64-x86_64-pcre mingw-w64-x86_64-c-ares git
+
+GCC_PATH=$(which gcc)
+MINGW64_BIN=${GCC_PATH::-4}
 
 git clone https://github.com/shadowsocks/shadowsocks-libev
 cd shadowsocks-libev
