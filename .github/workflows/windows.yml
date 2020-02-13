@@ -14,7 +14,7 @@ jobs:
         run: msys2do bash build-windows.sh
       - uses: actions/upload-artifact@v1
         with:
-          name: shadowsocks-libev-static-windows.tar.gz
-          path: ./shadowsocks-libev-static-windows.tar.gz
+          name: shadowsocks-libev-windows.tar.gz
+          path: ./shadowsocks-libev-windows.tar.gz
       - name: Test binary
         run: .\build\shadowsocks-libev\bin\ss-local.exe -h
