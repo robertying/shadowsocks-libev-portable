@@ -1,0 +1,17 @@
+name: mac
+
+on: push
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run build script
+        run: bash build-mac.sh
+      - uses: actions/upload-artifact@v1
+        with:
+          name: shadowsocks-libev-mac.tar.gz
+          path: ./shadowsocks-libev-mac.tar.gz
+      - name: Test binary
+        run: ./build/shadowsocks-libev/bin/ss-local -h || exit 1

@@ -1,0 +1,17 @@
+name: linux
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run build script
+        run: bash build-linux.sh
+      - uses: actions/upload-artifact@v1
+        with:
+          name: shadowsocks-libev-linux.tar.gz
+          path: ./shadowsocks-libev-linux.tar.gz
+      - name: Test binary
+        run: ./build/shadowsocks-libev/bin/ss-local -h || exit 1

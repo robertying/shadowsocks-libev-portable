@@ -1,0 +1,20 @@
+name: windows
+
+on: push
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: numworks/setup-msys2@v1
+        with:
+          update: true
+      - name: Run build script
+        run: msys2do bash build-windows.sh
+      - uses: actions/upload-artifact@v1
+        with:
+          name: shadowsocks-libev-static-windows.tar.gz
+          path: ./shadowsocks-libev-static-windows.tar.gz
+      - name: Test binary
+        run: .\build\shadowsocks-libev\bin\ss-local.exe -h
