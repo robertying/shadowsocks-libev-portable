@@ -5,7 +5,7 @@ BUILD_DIR=$DIR/build
 mkdir -p $BUILD_DIR
 cd $BUILD_DIR
 
-apt-get update && apt-get install build-essential automake autoconf libtool git python -y
+apt-get update && apt-get install build-essential automake autoconf libtool git python wget -y
 
 git clone https://github.com/shadowsocks/shadowsocks-libev
 cd shadowsocks-libev
